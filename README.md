@@ -4,6 +4,8 @@ Telegram-first, plugin-scoped **Projects UX** for OpenClaw.
 
 This repository is intentionally **out-of-tree** (not part of `openclaw/openclaw`).
 
+> Validated on OpenClaw **2026.1.30**
+
 ## Quick start (Telegram)
 
 ```bash
