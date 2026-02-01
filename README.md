@@ -36,6 +36,31 @@ This plugin adds guarded lifecycle operations for the current Telegram DM/peer:
 - No transcript/history deletion
 - No modifications to repos under `~/projects/`
 
+## Installation
+
+See [INSTALL.md](./INSTALL.md) for copy/pasteable setup steps.
+
+## Compatibility (validated on)
+
+Validated on:
+
+- OpenClaw **v2026.1.30**
+
+This repo is **Telegram-first** and depends on:
+
+- OpenClaw plugin discovery + `openclaw.plugin.json` manifest loading
+- Telegram command UI + inline button callback payload handling (the plugin uses `callback_data` values like `/projects ...`)
+- Plugin state under `~/.openclaw/projects-ux/`
+- Plugin hook entrypoints used by the extension:
+  - `before_agent_start` (for project framing / one-shot anti-bleed)
+  - `resolve_room_key` (optional; only if the plugin config enables Phase 2 hard isolation)
+
+After OpenClaw upgrades, re-check:
+
+- that Telegram inline button payloads still route to commands as expected
+- that the `resolve_room_key` hook contract/name still matches (if you enable it)
+- that plugin discovery precedence hasn’t changed for your chosen install method
+
 ## Contents
 
 - `extensions/projects-ux/` — the plugin, copied as-is.
