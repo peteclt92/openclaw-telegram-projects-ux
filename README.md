@@ -4,6 +4,47 @@ Telegram-first, plugin-scoped **Projects UX** for OpenClaw.
 
 This repository is intentionally **out-of-tree** (not part of `openclaw/openclaw`).
 
+## Quick start (Telegram)
+
+```bash
+git clone https://github.com/peteclt92/openclaw-telegram-projects-ux.git
+cp -r openclaw-telegram-projects-ux/extensions/projects-ux ~/.openclaw/extensions/
+openclaw gateway restart
+```
+
+In Telegram:
+
+```
+/projects on
+/projects new work
+/projects switch work
+```
+
+That’s it.
+
+## Verify isolation in 30 seconds
+
+```
+/projects new test-a
+/memory remember SENTINEL_A=neon
+
+/projects new test-b
+/memory list
+```
+
+If the second `/memory list` is empty, the plugin is working.
+
+## Removing projects / recovery
+
+In Telegram: `/projects` → **More…** → **Reset…**
+
+Options:
+
+- **Remove (wipe) ONE project**
+- **Wipe ALL projects** (recovery)
+
+All destructive actions are guarded and backed up.
+
 ## What this is
 
 OpenClaw’s Telegram DMs don’t have reliable native threading or durable conversation boundaries.
@@ -17,15 +58,6 @@ A **project** is a plugin-scoped unit of context that provides:
 
 This is implemented entirely at the plugin layer and is opt-in. If you never enable it, nothing changes.
 
-## Lifecycle management (safe operations)
-
-Once projects accumulate, cleanup/recovery needs to be safe and user-facing.
-This plugin adds guarded lifecycle operations for the current Telegram DM/peer:
-
-- **Remove (wipe) ONE project** (non-default)
-- **Wipe ALL projects state** (recovery)
-  - Resets Projects UX state for that DM and forces **Projects OFF (Classic)**
-
 ## Safety / constraints
 
 - Two-step confirmation with a single-use nonce and short expiry (~120s)
@@ -38,7 +70,7 @@ This plugin adds guarded lifecycle operations for the current Telegram DM/peer:
 
 ## Installation
 
-See [INSTALL.md](./INSTALL.md) for copy/pasteable setup steps.
+See [INSTALL.md](./INSTALL.md) for complete setup steps (alternatives, config, uninstall).
 
 ## Compatibility (validated on)
 
