@@ -62,7 +62,9 @@ This is implemented entirely at the plugin layer and is opt-in. If you never ena
 
 Projects UX in action inside a Telegram DM — project-scoped context with explicit switching and opt-in isolation.
 
-![Projects UX in Telegram](./assets/telegram-projects-ux-preview.png)
+<p align="left">
+  <img src="./assets/telegram-projects-ux-preview.png" width="320" alt="Projects UX in Telegram">
+</p>
 
 ## Safety / constraints
 
