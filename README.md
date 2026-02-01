@@ -58,6 +58,12 @@ A **project** is a plugin-scoped unit of context that provides:
 
 This is implemented entirely at the plugin layer and is opt-in. If you never enable it, nothing changes.
 
+## Preview (Telegram)
+
+Projects UX in action inside a Telegram DM — project-scoped context with explicit switching and opt-in isolation.
+
+![Projects UX in Telegram](./assets/telegram-projects-ux-preview.png)
+
 ## Safety / constraints
 
 - Two-step confirmation with a single-use nonce and short expiry (~120s)
